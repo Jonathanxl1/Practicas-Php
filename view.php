@@ -35,8 +35,11 @@
 		<tbody>
 
 	<?php 
+			
+			$arrayTotal=0;
 			while ($arrayOrders=mysqli_fetch_assoc($orders))
 			{
+			
  			echo "<tr>";
 			echo "<td>".$arrayOrders["id"]."</td>";
 			echo "<td>".$arrayOrders["first_name"]."</td>";
@@ -45,12 +48,20 @@
 			echo "<td>".$arrayOrders["num_order"]."</td>";
 			echo "<td>".$arrayOrders["total"]."</td>";
 			echo "</tr>";
- 			// echo "<tr>";
- 			// 	foreach ($arrayOrders as $key => $value) {
- 			// 	echo "<td>".$value."</td>";
+ 			$arrayTotal += $arrayOrders["total"];
+
 			}
+
+			
  			
   ?>
+
+  			<tfoot>
+				<tr>
+					<td colspan="5">Total</td>
+					<td ><?php echo $arrayTotal; ?></td>
+				</tr>
+			</tfoot>
 		</tbody>
 	</table>
 	</div>	
