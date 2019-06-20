@@ -13,11 +13,11 @@
 <body>
 	<div class="jumbotron-hr">
 
-<<<<<<< HEAD
-		<h1 class="h1 text-center">Tabla de Pedidos con Foreach</h1>
-=======
-		<h1 class="h1 text-center">Tabla de Pedidos</h1>
->>>>>>> Php-practicas/opcional
+
+		<h1 class="h1 text-center">Tabla de Pedidos con While</h1>
+
+	
+
 	</div>
 
 	<div class="container">
@@ -33,15 +33,24 @@
 			</tr>
 		</thead>
 		<tbody>
+
 	<?php 
 			while ($arrayOrders=mysqli_fetch_assoc($orders))
 			{
  			echo "<tr>";
- 				foreach ($arrayOrders as $key => $value) {
- 				echo "<td>".$value."</td>";
+			echo "<td>".$arrayOrders["id"]."</td>";
+			echo "<td>".$arrayOrders["first_name"]."</td>";
+			echo "<td>".$arrayOrders["last_name"]."</td>";
+			echo "<td>".$arrayOrders["email"]."</td>";
+			echo "<td>".$arrayOrders["num_order"]."</td>";
+			echo "<td>".$arrayOrders["total"]."</td>";
+			echo "</tr>";
+ 			// echo "<tr>";
+ 			// 	foreach ($arrayOrders as $key => $value) {
+ 			// 	echo "<td>".$value."</td>";
 			}
- 			echo "</tr>";
- } ?>
+ 			
+  ?>
 		</tbody>
 	</table>
 	</div>	
