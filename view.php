@@ -30,6 +30,7 @@
 		</thead>
 		<tbody>
 	<?php 
+			$arrayTotal=0;
 			while ($arrayOrders=mysqli_fetch_assoc($orders))
 			{
  			echo "<tr>";
@@ -37,7 +38,20 @@
  				echo "<td>".$value."</td>";
 			}
  			echo "</tr>";
- } ?>
+ 			$arrayTotal += $arrayOrders["total"];
+  
+}
+
+ ?>
+ 			<tfoot>
+ 				<tr>
+ 					<td colspan="5" >Total</td>
+ 					<td><?php echo $arrayTotal; ?></td>
+ 				</tr>
+ 			</tfoot>
+
+
+
 		</tbody>
 	</table>
 	</div>	
