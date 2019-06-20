@@ -13,7 +13,7 @@
 <body>
 	<div class="jumbotron-hr">
 
-		<h1 class="h1 text-center">Tabla de Pedidos</h1>
+		<h1 class="h1 text-center">Tabla de Pedidos con Foreach</h1>
 	</div>
 
 	<div class="container">
